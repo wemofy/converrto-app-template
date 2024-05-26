@@ -1,0 +1,146 @@
+{
+  "app_id": 1,
+  "app_name": "Wemofy",
+  "app_icon": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
+  "app_package_name": "com.wemofy.appname",
+  "config": {
+    "snackbar": {
+      "color": "#EDE8FA",
+      "text_color": "#000000"
+    },
+    "backbutton":{
+      "color": "#EDE8FA",
+      "icon_color": "#000000"
+    },
+    "splashscreen": {
+      "active": true,
+      "options": {
+        "duration": 3,
+        "centericon": "assets/icon.png",
+        "centericon_radius": 100.0,
+        "bgcolor": "#E8F8FA",
+        "bgimage": {
+          "active": true,
+          "imageurl": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg"
+        }
+      }
+    },
+    "onboardingscreen": {
+      "active": true,
+      "screen_count": 2,
+      "bgcolor": "#EDE8FA",
+      "button_color":"#00066B",
+      "dot_color": "#00066B",
+      "active_dot_color": "#232996",
+      "squaredot": true,
+      "options": [
+        {
+          "height_scale_ofimage": 0.8,
+          "width_scale_ofimage": 1.0,
+          "border_radius_ofimage": 40.0,
+          "title": "Get Staretd With Wemofy",
+          "titlecolor": "#000000",
+          "descriptioncolor": "#232996",
+          "bgimage": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus in velit pulvinar "
+
+        },
+        {
+          "height_scale_ofimage": 1.0,
+          "width_scale_ofimage": 1.0,
+          "border_radius_ofimage": 40.0,
+          "title": "This is 2nd title",
+          "titlecolor": "#000000",
+          "descriptioncolor": "#232996",
+          "bgimage": "assets/onboardimage1.png",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus in velit pulvinar "
+        }
+      ]
+    },
+    "appbar": {
+      "active": true,
+      "options": {
+        "bgcolor": "#8D4BFA",
+        "bgicon": "assets/icon.png",
+        "app_title": "My App",
+        "title_font_weight": 5,
+        "title_font_family": "poppins",
+        "app_title_color": "#000000",
+        "centertitle": false,
+        "title_fontsize": "25"
+      }
+    },
+    "bottom_navigation": {
+      "active": true,
+      "options": {
+        "bottom_bar_color": "#EDE8FA",
+        "selected_item_color": "#000000",
+        "unselected_item_color": "#64748B",
+        "menu_options_count": 2,
+        "menu_options": [
+          {
+            "name": "Home",
+            "url": "https://wemofy.in/",
+            "icon": "home_fill.svg"
+          },
+          {
+            "name": "Profile",
+            "url": "https://wemofy.in/",
+            "icon": "messages_fill.svg"
+          }
+        ]
+      }
+    },
+    "sidebar": {
+      "active": true,
+      "app_icon": "assets/icon.svg",
+      "app_name": "Wemofy",
+      "app_name_color": "#FFFFFF",
+      "app_id": 1,
+      "app_id_color": "#DADADA",
+      "options": {
+        "side_bar_color": "#8D4BFA",
+        "side_bar_item_color": "#9C77F4",
+        "menubutton_text_color": "#FFFFFF",
+        "selected_menubutton_text_color": "#FFFFFF",
+        "side_options_count": 4,
+        "side_options": [
+          {
+            "name": "Wemofy",
+            "url": "https://wemofy.in/",
+            "icon": "assets/person.svg"
+          },
+          {
+            "name": "youtube",
+            "url": "https://www.youtube.com/",
+            "icon": "assets/person.svg"
+          },
+          {
+            "name": "codeforces",
+            "url": "https://codeforces.com/",
+            "icon": "assets/person.svg"
+          },
+          {
+            "name": "Help",
+            "url": "https://codeforces.com/",
+            "icon": "assets/person.svg"
+          }
+        ]
+      }
+    },
+    "extra_options": {
+      "active": true,
+      "options": {
+        "app_bgcolor": "#ffffff",
+        "circular_loader": {
+          "active": true,
+          "color": "#AA0000"
+        },
+        "refreshbutton": true,
+        "default_error_message": "Somthing got wrong",
+        "try_again_text": "Tryy AGain text",
+        "double_press_exit": true
+      }
+    }
+  }
+}
