@@ -41,6 +41,8 @@ dependencies:
   webview_flutter: ^4.7.0
   flutter_launcher_icons: ^0.13.1
   double_back_to_close_app: ^2.1.0
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
