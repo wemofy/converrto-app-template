@@ -19,7 +19,6 @@ Future<String> loadJsonData() async {
 
 class MyApp extends StatefulWidget {
   final Map<String, dynamic> jsonData;
-
   const MyApp({super.key, required this.jsonData});
 
   @override
@@ -62,6 +61,7 @@ class _MyAppState extends State<MyApp> {
         primaryColor: getColor(splashConfig['bgcolor']),
         appBarTheme: AppBarTheme(
             iconTheme: IconThemeData(
+              size: 30,
               color: hexToColor(
                   config['config']['appbar']['options']['app_title_color']),
             ),

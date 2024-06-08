@@ -37,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: hexToColor(widget.onboardingoptions['bgcolor']),
+      backgroundColor: hexToColor(widget.onboardingoptions['screen_options']['bgcolor']),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 80),
@@ -45,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               Expanded(
                 child: PageView.builder(
-                  itemCount: widget.onboardingoptions['screen_count'],
+                  itemCount: widget.onboardingoptions['screen_options']['screen_count'],
                   controller: _pageController,
                   itemBuilder: (context, index) => OnboardContent(
                     title: widget.onboardingoptions['options'][index]['title'],
@@ -83,35 +83,35 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       );
                     },
                     buttonname: "Skip",
-                    color: widget.onboardingoptions['button_color'],
+                    color: widget.onboardingoptions['screen_options']['button_color'],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),
                     child: SmoothPageIndicator(
                       controller: _pageController, // PageController
-                      count: widget.onboardingoptions['screen_count'],
+                      count: widget.onboardingoptions['screen_options']['screen_count'],
                       effect: ScaleEffect(
                         spacing: 9.0,
                         scale: 1.5,
-                        radius: widget.onboardingoptions['squaredot']?2.0:5.0,
+                        radius: widget.onboardingoptions['screen_options']['squaredot']?2.0:5.0,
                         dotWidth: 10.0,
                         dotHeight: 10.0,
                         strokeWidth: 10,
                         dotColor:
-                            hexToColor(widget.onboardingoptions['dot_color']),
+                            hexToColor(widget.onboardingoptions['screen_options']['dot_color']),
                         activeDotColor: hexToColor(
-                            widget.onboardingoptions['active_dot_color']),
+                            widget.onboardingoptions['screen_options']['active_dot_color']),
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   CustomButton(
                     press: () {
                       _pageController.page !=
-                              widget.onboardingoptions['screen_count'] - 1
+                              widget.onboardingoptions['screen_options']['screen_count'] - 1
                           ? _pageController.nextPage(
-                              duration: Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 500),
                               curve: Curves.ease,
                             )
                           : Navigator.pushReplacement(
@@ -126,7 +126,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                     },
                     buttonname: "Next",
-                    color: widget.onboardingoptions['button_color'],
+                    color: widget.onboardingoptions['screen_options']['button_color'],
                   ),
                 ],
               ),
@@ -162,7 +162,7 @@ class OnboardContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Spacer(
+        const Spacer(
           flex: 10,
         ),
         Container(
@@ -191,7 +191,7 @@ class OnboardContent extends StatelessWidget {
             )),
           )
         ),
-        Spacer(
+        const Spacer(
           flex: 6,
         ),
         Text(
@@ -201,7 +201,7 @@ class OnboardContent extends StatelessWidget {
               ),
           textAlign: TextAlign.center,
         ),
-        Spacer(
+        const Spacer(
           flex: 2,
         ),
         Text(
@@ -211,7 +211,7 @@ class OnboardContent extends StatelessWidget {
               ),
           textAlign: TextAlign.center,
         ),
-        Spacer(
+        const Spacer(
           flex: 4,
         ),
       ],

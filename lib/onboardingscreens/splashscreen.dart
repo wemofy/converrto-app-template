@@ -47,17 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
           children: <Widget>[
             widget.options['bgimage']['active']
                 ? Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: isNetworkUrl(
-                                widget.options['bgimage']['imageurl'])
-                            ? NetworkImage(
-                                widget.options['bgimage']['imageurl'])
-                            : AssetImage(widget.options['bgimage']['imageurl'])
-                                as ImageProvider,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
                     child: widget.options['bgimage']['imageurl']
                             .toLowerCase()
                             .endsWith('.svg')
@@ -74,7 +63,19 @@ class _SplashScreenState extends State<SplashScreen> {
                                 width: double.infinity,
                                 height: double.infinity,
                               ))
-                        : null,
+                        : (isNetworkUrl(widget.options['bgimage']['imageurl'])
+                            ? Image.network(
+                                widget.options['bgimage']['imageurl'],
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              )
+                            : Image.asset(
+                                widget.options['bgimage']['imageurl'],
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              )),
                   )
                 : Container(),
             Center(

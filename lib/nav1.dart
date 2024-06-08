@@ -131,11 +131,11 @@ class _Nav1State extends State<Nav1> {
                       ),
                     )
                   : Container(),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(25),
                   bottomLeft: Radius.circular(25),
                 ),

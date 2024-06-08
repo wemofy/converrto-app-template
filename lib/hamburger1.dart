@@ -2,8 +2,8 @@ import 'package:converrto/homescreen.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import '../globalfunctions.dart';
-import '../icon.dart';
+import 'globalfunctions.dart';
+import 'icon.dart';
 
 class Hamburger1 extends StatefulWidget {
   Hamburger1(
@@ -85,7 +85,7 @@ class _Hamburger1State extends State<Hamburger1> {
                   radius: 28,
                   url: widget.jsonData['config']['appbar']['options']['bgicon'],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 30,
                 ),
               ],
@@ -159,7 +159,7 @@ class _Hamburger1State extends State<Hamburger1> {
                                 widget.jsonData['config']['extra_options']
                                     ['options']['refreshbutton']
                             ? ClipRRect(
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(25),
                                   bottomLeft: Radius.circular(25),
                                 ),
@@ -182,11 +182,11 @@ class _Hamburger1State extends State<Hamburger1> {
                                 ),
                               )
                             : Container(),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         ClipRRect(
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(25),
                             bottomLeft: Radius.circular(25),
                           ),
@@ -262,7 +262,7 @@ class _Hamburger1State extends State<Hamburger1> {
                               widget.jsonData['config']['extra_options']
                                   ['options']['refreshbutton']
                           ? ClipRRect(
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(25),
                                 bottomLeft: Radius.circular(25),
                               ),
@@ -284,11 +284,11 @@ class _Hamburger1State extends State<Hamburger1> {
                               ),
                             )
                           : Container(),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(25),
                           bottomLeft: Radius.circular(25),
                         ),
