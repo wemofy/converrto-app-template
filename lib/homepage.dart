@@ -116,7 +116,10 @@ class _HomePageState extends State<HomePage> {
               ? GridView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 3: 5,
+                      crossAxisCount: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? 3
+                          : 5,
                       crossAxisSpacing: 15,
                       mainAxisSpacing: 15,
                       mainAxisExtent: 130),
@@ -148,7 +151,7 @@ class _HomePageState extends State<HomePage> {
                                 color: hexToColor(widget.homedata['tab']
                                     ['tab_border_color']))),
                         child: Padding(
-                          padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Column(
                             children: [
                               ClipRRect(
@@ -192,10 +195,14 @@ class _HomePageState extends State<HomePage> {
               : Container(),
           widget.homedata['options']['active']
               ? Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 20),
+                  padding: const EdgeInsets.fromLTRB(20, 5, 20, 25),
                   child: Container(
                     height: 92.0 *
-                            ((widget.homedata['options']['options_count'] /( MediaQuery.of(context).orientation == Orientation.portrait ? 4 : 6))
+                            ((widget.homedata['options']['options_count'] /
+                                    (MediaQuery.of(context).orientation ==
+                                            Orientation.portrait
+                                        ? 4
+                                        : 6))
                                 .ceil()) +
                         20,
                     decoration: BoxDecoration(
@@ -207,13 +214,16 @@ class _HomePageState extends State<HomePage> {
                             color: hexToColor(
                                 widget.homedata['options']['border_color']))),
                     child: GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
+                      physics: const NeverScrollableScrollPhysics(),
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 4 : 6,
+                          crossAxisCount: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? 4
+                              : 6,
                           crossAxisSpacing: 5,
                           mainAxisSpacing: 5,
                           mainAxisExtent: 90),
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       shrinkWrap: true,
                       itemCount: widget.homedata['options']['options_count'],
                       itemBuilder: (context, index) {
@@ -265,6 +275,82 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
                   ),
+                )
+              : Container(),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+            child: Container(
+              height: 4,
+              decoration: BoxDecoration(
+                color: hexToColor(widget.homedata["buttons"]['partition_color']),
+                borderRadius: BorderRadius.circular(1),
+              ),
+            ),
+          ),
+          widget.homedata['buttons']['active']
+              ? GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? 2
+                          : 4,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      mainAxisExtent: 46),
+                  padding: const EdgeInsets.fromLTRB(30, 25, 30, 20),
+                  shrinkWrap: true,
+                  itemCount: widget.homedata['buttons']['buttons_count'],
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WebPage(
+                                    jsonData: widget.jsonData,
+                                    url: widget.homedata['buttons']
+                                        ['buttons_array'][index]['url'],
+                                    title: widget.homedata['buttons']
+                                        ['buttons_array'][index]['title'],
+                                  )),
+                        );
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: hexToColor(
+                                widget.homedata['buttons']['buttons_color']),
+                            borderRadius: BorderRadius.circular(23),
+                            border: Border.all(
+                                width: 1,
+                                color: hexToColor(widget.homedata['buttons']
+                                    ['border_color']))),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                          child: Text(
+                            widget.homedata['buttons']['buttons_array'][index]
+                                ['title'],
+                            textAlign: TextAlign.center,
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelSmall
+                                ?.copyWith(
+                                  color: hexToColor(widget.homedata['buttons']
+                                      ['title_color']),
+                                  fontSize: 14,
+                                ),
+                            // style: TextStyle(
+                            //   color: hexToColor(
+                            //       widget.homedata['tab']['title_color']),
+                            //   fontSize: 14,
+                            // ),
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 )
               : Container(),
         ],
