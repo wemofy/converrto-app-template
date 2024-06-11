@@ -8,7 +8,7 @@
       "color": "#EDE8FA",
       "text_color": "#000000"
     },
-    "backbutton":{
+    "backbutton": {
       "color": "#EDE8FA",
       "icon_color": "#000000"
     },
@@ -30,7 +30,7 @@
       "screen_options": {
         "screen_count": 2,
         "bgcolor": "#EDE8FA",
-        "button_color":"#00066B",
+        "button_color": "#00066B",
         "dot_color": "#00066B",
         "active_dot_color": "#232996",
         "squaredot": true
@@ -45,7 +45,6 @@
           "descriptioncolor": "#232996",
           "bgimage": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus in velit pulvinar "
-
         },
         {
           "height_scale_ofimage": 1.0,
@@ -78,33 +77,42 @@
         "bottom_bar_color": "#EDE8FA",
         "selected_item_color": "#000000",
         "unselected_item_color": "#64748B",
-        "menu_options_count":3,
+        "menu_options_count": 3,
         "menu_options": [
           {
             "name": "Home",
             "icon": "home_fill.svg",
             "homescreen_options": {
+              "view_order": [
+                "options",
+                "divider",
+                "tab",
+                "buttons"
+              ],
               "carousel": {
                 "active": true,
                 "border_color": "#ADADAD",
                 "dot_color": "#D4C4F2",
                 "active_dot_color": "#8D4BFA",
-                "squaredot": false ,
-                "carousel_count": 4 ,
+                "squaredot": false,
+                "carousel_count": 4,
                 "carousel_array": [
                   {
                     "title": "hello",
                     "bgimage": "https://codeforces.com/predownloaded/54/8a/548a369b1a954b2f7f9133072a025435c8667aac.png",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "hello",
                     "bgimage": "https://codeforces.com/predownloaded/09/d5/09d515849719f4bf8642ee12bc840cab1f4c5d7d.png",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "hello",
                     "bgimage": "assets/img.png",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "hello",
                     "bgimage": "assets/img.png",
                     "url": "https://wemofy.in/"
@@ -161,15 +169,18 @@
                     "title": "youtube",
                     "bgimage": "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "MX player",
                     "bgimage": "https://play-lh.googleusercontent.com/2VgqYMAFw4aJvCab7sViUhWgqCkAX6Dn9uftmSM2LIgxHN9EqLOMjJFmnklvXvHBPfA",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "google",
                     "bgimage": "https://e7.pngegg.com/pngimages/337/722/png-clipart-google-search-google-account-google-s-google-play-google-company-text.png",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "Option 5",
                     "bgimage": "assets/purple.png",
                     "url": "https://wemofy.in/"
@@ -191,13 +202,16 @@
                   {
                     "title": "youtube",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "MX player",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "google",
                     "url": "https://wemofy.in/"
-                  },{
+                  },
+                  {
                     "title": "option 5",
                     "url": "https://wemofy.in/"
                   }
