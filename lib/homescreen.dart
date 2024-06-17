@@ -106,8 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (index == 0) {
                     return HomePage(
                       jsonData: widget.jsonData,
-                      homedata: widget.jsonData['config']['bottom_navigation']
-                          ['options']['menu_options'][0]['homescreen_options'],
+                      homedata: widget.jsonData['config']['homescreen_options'],
                     );
                   } else {
                     return Nav1(
@@ -133,8 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (index == 0) {
                   return HomePage(
                     jsonData: widget.jsonData,
-                    homedata: widget.jsonData['config']['bottom_navigation']
-                        ['options']['menu_options'][0]['homescreen_options'],
+                    homedata: widget.jsonData['config']['homescreen_options'],
                   );
                 } else {
                   return Nav1(
