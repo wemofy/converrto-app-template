@@ -71,6 +71,7 @@ flutter:
   assets:
     - assets/
     - assets/nav_icons/
+    - assets/amazon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

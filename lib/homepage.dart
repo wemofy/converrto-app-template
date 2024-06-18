@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 10,
           ),
-          widget.homedata['carousel']['active']
+          widget.homedata['options']['carousel']['active']
               ? CarouselSlider(
                   options: CarouselOptions(
                     aspectRatio: 2,
@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                   items: List.generate(
-                    widget.homedata['carousel']['carousel_count'],
+                    widget.homedata['options']['carousel']['carousel_count'],
                     (index) => GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -50,9 +50,9 @@ class _HomePageState extends State<HomePage> {
                           MaterialPageRoute(
                               builder: (context) => WebPage(
                                     jsonData: widget.jsonData,
-                                    url: widget.homedata['carousel']
+                                    url: widget.homedata['options']['carousel']
                                         ['carousel_array'][index]['url'],
-                                    title: widget.homedata['carousel']
+                                    title: widget.homedata['options']['carousel']
                                         ['carousel_array'][index]['title'],
                                   )),
                         );
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.circular(7),
                               border: Border.all(
                                   width: 1,
-                                  color: hexToColor(widget.homedata['carousel']
+                                  color: hexToColor(widget.homedata['options']['carousel']
                                       ['border_color'])),
                               color: Colors.transparent,
                             ),
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(7),
                               child: ImageLoader(
-                                  url: widget.homedata['carousel']
+                                  url: widget.homedata['options']['carousel']
                                       ['carousel_array'][index]['bgimage']),
                             ),
                           ),
@@ -86,74 +86,74 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 5,
           ),
-          widget.homedata['carousel']['active']
+          widget.homedata['options']['carousel']['active']
               ? DotsIndicator(
                   decorator: DotsDecorator(
                     size: const Size.square(12),
                     activeSize: const Size.square(12),
                     spacing: const EdgeInsets.fromLTRB(2.5, 0, 2.5, 0),
-                    color: hexToColor(widget.homedata['carousel']['dot_color']),
+                    color: hexToColor(widget.homedata['options']['carousel']['dot_color']),
                     activeColor: hexToColor(
-                        widget.homedata['carousel']['active_dot_color']),
+                        widget.homedata['options']['carousel']['active_dot_color']),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
-                            widget.homedata['carousel']['squaredot']
+                            widget.homedata['options']['carousel']['squaredot']
                                 ? 2.0
                                 : 6.0)),
                     activeShape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
-                            widget.homedata['carousel']['squaredot']
+                            widget.homedata['options']['carousel']['squaredot']
                                 ? 2.0
                                 : 6.0)),
                   ),
-                  dotsCount: widget.homedata['carousel']['carousel_count'],
+                  dotsCount: widget.homedata['options']['carousel']['carousel_count'],
                   position: currentIndex,
                 )
               : Container(),
           const SizedBox(
             height: 10,
           ),
-          widget.homedata['view_order'].length >= 1
+          widget.homedata['options']['view_order'].length >= 1
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][0])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][0])
               : Container(),
-          widget.homedata['view_order'].length >= 2
+          widget.homedata['options']['view_order'].length >= 2
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][1])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][1])
               : Container(),
-          widget.homedata['view_order'].length >= 3
+          widget.homedata['options']['view_order'].length >= 3
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][2])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][2])
               : Container(),
-          widget.homedata['view_order'].length >= 4
+          widget.homedata['options']['view_order'].length >= 4
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][3])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][3])
               : Container(),
-          widget.homedata['view_order'].length >= 5
+          widget.homedata['options']['view_order'].length >= 5
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][4])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][4])
               : Container(),
-          widget.homedata['view_order'].length >= 6
+          widget.homedata['options']['view_order'].length >= 6
               ? GridViewScreen(
                   jsonData: widget.jsonData,
-                  homedata: widget.homedata,
-                  type: widget.homedata['view_order'][5])
+                  homedata: widget.homedata['options'],
+                  type: widget.homedata['options']['view_order'][5])
               : Container(),
-          widget.homedata['view_order'].length >= 7
+          widget.homedata['options']['view_order'].length >= 7
               ? GridViewScreen(
               jsonData: widget.jsonData,
-              homedata: widget.homedata,
-              type: widget.homedata['view_order'][6])
+              homedata: widget.homedata['options'],
+              type: widget.homedata['options']['view_order'][6])
               : Container(),
           const SizedBox(height: 10,),
         ],

@@ -1,218 +1,208 @@
 {
   "app_id": 1,
-  "app_name": "Wemofy",
+  "app_name": "Amazon",
   "app_icon": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
-  "app_package_name": "com.wemofy.appname",
+  "app_package_name": "com.Amazon.appname",
   "config": {
     "snackbar": {
       "color": "#EDE8FA",
       "text_color": "#000000"
     },
     "backbutton": {
-      "color": "#EDE8FA",
+      "color": "#232F3E",
       "icon_color": "#000000"
     },
     "splashscreen": {
       "active": true,
       "options": {
         "duration": 3,
-        "centericon": "assets/icon.png",
+        "centericon": "assets/icon.svg",
         "centericon_radius": 100.0,
-        "bgcolor": "#E8F8FA",
+        "bgcolor": "#FFFFFF",
         "bgimage": {
-          "active": true,
+          "active": false,
           "imageurl": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg"
         }
       }
     },
     "onboardingscreen": {
       "active": true,
-      "screen_options": {
-        "screen_count": 2,
-        "bgcolor": "#EDE8FA",
-        "button_color": "#00066B",
-        "dot_color": "#00066B",
-        "active_dot_color": "#232996",
-        "squaredot": true
-      },
-      "options": [
-        {
-          "height_scale_ofimage": 0.8,
-          "width_scale_ofimage": 1.0,
-          "border_radius_ofimage": 40.0,
-          "title": "Get Staretd With Wemofy",
-          "titlecolor": "#000000",
-          "descriptioncolor": "#232996",
-          "bgimage": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus in velit pulvinar "
+      "options":{
+        "screen_options": {
+          "screen_count": 2,
+          "bgcolor": "#232F3E",
+          "button_color": "#ff9900",
+          "dot_color": "#FFFFFF",
+          "active_dot_color": "#ff9900",
+          "squaredot": true
         },
-        {
-          "height_scale_ofimage": 1.0,
-          "width_scale_ofimage": 1.0,
-          "border_radius_ofimage": 40.0,
-          "title": "This is 2nd title",
-          "titlecolor": "#000000",
-          "descriptioncolor": "#232996",
-          "bgimage": "assets/onboardimage1.png",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec lectus in velit pulvinar "
-        }
-      ]
+        "screens_config": [
+          {
+            "height_scale_ofimage": 0.8,
+            "width_scale_ofimage": 1.0,
+            "border_radius_ofimage": 40.0,
+            "title": "Welcome to Amazon!",
+            "titlecolor": "#FFFFFF",
+            "descriptioncolor": "#FFFFFF",
+            "bgimage": "assets/icon.svg",
+            "description": "A place where people can come to find ans discover anything they might want to buy online"
+          },
+          {
+            "height_scale_ofimage": 1.0,
+            "width_scale_ofimage": 1.0,
+            "border_radius_ofimage": 40.0,
+            "title": "Track your Orders Easily",
+            "titlecolor": "#FFFFFF",
+            "descriptioncolor": "#FFFFFF",
+            "bgimage": "assets/onboardimage1.png",
+            "description": "keep track of exactly where your order is! 2 days away ,4 hr away ! was that the door bell!!"
+          }
+        ]
+      }
     },
     "appbar": {
       "active": true,
       "options": {
-        "bgcolor": "#8D4BFA",
-        "bgicon": "assets/icon.png",
+        "bgcolor": "#232F3E",
+        "bgicon": "assets/icon.svg",
         "app_title": "My App",
         "title_font_weight": 5,
         "title_font_family": "poppins",
-        "app_title_color": "#000000",
+        "app_title_color": "#FFFFFF",
         "centertitle": false,
         "title_fontsize": "25"
       }
     },
     "homescreen_options": {
-      "view_order": [
-        "options",
-        "divider",
-        "tab",
-        "buttons"
-      ],
-      "carousel": {
-        "active": true,
-        "border_color": "#ADADAD",
-        "dot_color": "#D4C4F2",
-        "active_dot_color": "#8D4BFA",
-        "squaredot": false,
-        "carousel_count": 4,
-        "carousel_array": [
-          {
-            "title": "hello",
-            "bgimage": "https://codeforces.com/predownloaded/54/8a/548a369b1a954b2f7f9133072a025435c8667aac.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "hello",
-            "bgimage": "https://codeforces.com/predownloaded/09/d5/09d515849719f4bf8642ee12bc840cab1f4c5d7d.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "hello",
-            "bgimage": "assets/img.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "hello",
-            "bgimage": "assets/img.png",
-            "url": "https://wemofy.in/"
-          }
-        ]
-      },
-      "tab": {
-        "active": true,
-        "tab_color": "#EDE8FA",
-        "tab_border_color": "#ADADAD",
-        "title_color": "#8D4BFA",
-        "tab_count": 5,
-        "tab_array": [
-          {
-            "title": "website",
-            "bgimage": "https://aroundsketch.github.io/Apple-App-Icons/App%20Icon/Apple/AppStore/@SVG.svg",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "codeforces",
-            "bgimage": "https://cdn-1.webcatalog.io/catalog/codeforces/codeforces-icon-filled-256.webp?v=1714773964567",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "converto",
-            "bgimage": "assets/appicon.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "youtube",
-            "bgimage": "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "google",
-            "bgimage": "https://e7.pngegg.com/pngimages/337/722/png-clipart-google-search-google-account-google-s-google-play-google-company-text.png",
-            "url": "https://wemofy.in/"
-          }
-        ]
-      },
       "options": {
-        "active": true,
-        "bgcolor": "#EDE8FA",
-        "border_color": "#ADADAD",
-        "title_color": "#8D4BFA",
-        "options_count": 5,
-        "options_array": [
-          {
-            "title": "google",
-            "bgimage": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Google.jpg",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "youtube",
-            "bgimage": "https://cdn3.iconfinder.com/data/icons/social-network-30/512/social-06-512.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "MX player",
-            "bgimage": "https://play-lh.googleusercontent.com/2VgqYMAFw4aJvCab7sViUhWgqCkAX6Dn9uftmSM2LIgxHN9EqLOMjJFmnklvXvHBPfA",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "google",
-            "bgimage": "https://e7.pngegg.com/pngimages/337/722/png-clipart-google-search-google-account-google-s-google-play-google-company-text.png",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "Option 5",
-            "bgimage": "assets/purple.png",
-            "url": "https://wemofy.in/"
-          }
-        ]
-      },
-      "buttons": {
-        "active": true,
-        "partition_color": "#8D4BFA",
-        "buttons_color": "#EDE8FA",
-        "border_color": "#ADADAD",
-        "title_color": "#8D4BFA",
-        "buttons_count": 5,
-        "buttons_array": [
-          {
-            "title": "google",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "youtube",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "MX player",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "google",
-            "url": "https://wemofy.in/"
-          },
-          {
-            "title": "option 5",
-            "url": "https://wemofy.in/"
-          }
-        ]
+        "view_order": [
+          "minicards",
+          "divider",
+          "cards",
+          "buttons"
+        ],
+        "carousel": {
+          "active": true,
+          "border_color": "#ADADAD",
+          "dot_color": "#D4C4F2",
+          "active_dot_color": "#146EB4",
+          "squaredot": false,
+          "carousel_count": 3,
+          "carousel_array": [
+            {
+              "title": "Mobiles",
+              "bgimage": "assets/amazon/mobilephones.png",
+              "url": "https://www.amazon.in/b/?_encoding=UTF8&node=1389401031&ref_=hero1_WLDUber&pd_rd_w=IbSLb&content-id=amzn1.sym.5880db43-8f62-49ae-9f3d-7b5f2605dec3&pf_rd_p=5880db43-8f62-49ae-9f3d-7b5f2605dec3&pf_rd_r=JVR35EA4G1RTFM9GX6VK&pd_rd_wg=KExZv&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce"
+            },
+            {
+              "title": "Buckets",
+              "bgimage": "assets/amazon/buckets_mugs.png",
+              "url": "https://www.amazon.in/s?k=buckets&i=kitchen&rh=p_72%3A1318476031%2Cp_36%3A-42000&s=home&dc&_encoding=UTF8&content-id=amzn1.sym.bc7b0e44-feb7-439d-93e9-b51679de2751&crid=TIAC6HR8OAGP&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce&pd_rd_w=Aei8k&pd_rd_wg=KExZv&pf_rd_p=bc7b0e44-feb7-439d-93e9-b51679de2751&pf_rd_r=JVR35EA4G1RTFM9GX6VK&qid=1718114231&rnid=3444809031&sprefix=buckets%2Ckitchen%2C251&ref=pd_hp_d_hero_unk"
+            },
+            {
+              "title": "Under 499",
+              "bgimage": "assets/amazon/under499.png",
+              "url": "https://www.amazon.in/s?i=toys&bbn=1350380031&rh=n%3A1350380031%2Cp_85%3A10440599031%2Cp_72%3A1318476031%2Cp_28%3A-SPONS%2Cp_n_age_range%3A1480705031%7C1480706031%7C1480707031%7C1480708031%7C1480709031%7C1665125031%2Cp_36%3A-48000&dc&_encoding=UTF8&_encoding=UTF8&content-id=amzn1.sym.e1f4e1a6-d346-4773-8270-ec7a5d81880d&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce&pd_rd_w=g2x77&pd_rd_wg=KExZv&pf_rd_p=e1f4e1a6-d346-4773-8270-ec7a5d81880d&pf_rd_r=JVR35EA4G1RTFM9GX6VK&qid=1718019024&rnid=2485523031&ref=pd_hp_d_hero_unk"
+            }
+          ]
+        },
+        "cards": {
+          "active": true,
+          "cards_color": "#D3E9FF",
+          "cards_border_color": "#8EC5FD",
+          "title_color": "#000000",
+          "cards_count": 5,
+          "cards_array": [
+            {
+              "title": "Prime",
+              "bgimage": "assets/amazon/tab1.png",
+              "url": "https://www.amazon.in/amazonprime?pd_rd_w=3EBdw&content-id=amzn1.sym.e283dc19-a806-41c7-a8be-0cee0d758b19:amzn1.sym.e283dc19-a806-41c7-a8be-0cee0d758b19&pf_rd_p=e283dc19-a806-41c7-a8be-0cee0d758b19&pf_rd_r=5RJ46CEATXCVSC6H2052&pd_rd_wg=MV15o&pd_rd_r=1759766f-c8a8-4d79-ba6d-7173eacdc001&qid=1718647838&ref=sxts_aspa_qna&c_c=-1399515592"
+            },
+            {
+              "title": "Mobiles",
+              "bgimage": "assets/amazon/tab2.png",
+              "url": "https://www.amazon.in/s?k=Mobiles&crid=Y9R52RNY9QHJ&sprefix=mobiles%2Caps%2C230&ref=nb_sb_noss_1"
+            },
+            {
+              "title": "Games",
+              "bgimage": "assets/amazon/tab3.png",
+              "url": "https://www.amazon.in/s?k=Gamrs&crid=3W0TGJOI7488P&sprefix=games%2Caps%2C216&ref=nb_sb_noss_1"
+            },
+            {
+              "title": "Fasion",
+              "bgimage": "assets/amazon/tab4.png",
+              "url": "https://www.amazon.in/s?k=Fasion&crid=2GJFU0Z7LOAHE&sprefix=fasion%2Caps%2C224&ref=nb_sb_noss_2"
+            },
+            {
+              "title": "minitv",
+              "bgimage": "assets/amazon/tab5.png",
+              "url": "https://www.amazon.in/minitv?ref_=nav_em_avod_desktop_hamburger_0_1_1_6"
+            }
+          ]
+        },
+        "minicards": {
+          "active": true,
+          "bgcolor": "#FFEED4",
+          "border_color": "#ADADAD",
+          "title_color": "#000000",
+          "minicards_count": 4,
+          "minicards_array": [
+            {
+              "title": "Amazon pay",
+              "bgimage": "assets/amazon/op1.svg",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay"
+            },
+            {
+              "title": "Transactions",
+              "bgimage": "assets/amazon/op2.svg",
+              "url": "https://www.amazon.in/pay/history?ref_=apay_deskhome_ViewStatement"
+            },
+            {
+              "title": "Scan & Pay",
+              "bgimage": "assets/amazon/op3.svg",
+              "url": "https://www.amazon.in/b?ie=UTF8&node=16300323031&pd_rd_w=iORCl&content-id=amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c:amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_p=4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_r=XJN7DMXTDRP7ZV9GZF7Z&pd_rd_wg=bJydF&pd_rd_r=cda1e67f-deab-4da0-bbb3-928a93b70c80&qid=1718647290&ref_=sxts_snpl_1_0_4f91868f-fe8e-421b-85a1-79b3ce31889c"
+            },
+            {
+              "title": "Pay Bills",
+              "bgimage": "assets/amazon/op4.svg",
+              "url": "https://www.amazon.in/apay/bills-and-offers"
+            }
+          ]
+        },
+        "buttons": {
+          "active": true,
+          "partition_color": "#146eb4",
+          "buttons_color": "#FFFFFF",
+          "border_color": "#ADADAD",
+          "title_color": "#000000",
+          "buttons_count": 4,
+          "buttons_array": [
+            {
+              "title": "Orders",
+              "url": "https://www.amazon.in/gp/css/order-history?ref_=nav_orders_first"
+            },
+            {
+              "title": "Buy Again",
+              "url": "https://www.amazon.in/gp/buyagain?ie=UTF8&ref_=nav_cs_buy_again"
+            },
+            {
+              "title": "Account",
+              "url": "https://www.amazon.in/gp/css/homepage.html?ref_=nav_em_ya_0_1_1_38"
+            },
+            {
+              "title": "Customer service",
+              "url": "https://www.amazon.in/gp/help/customer/display.html?nodeId=508510&ref_=nav_em_cs_help_0_1_1_39"
+            }
+          ]
+        }
       }
     },
     "bottom_navigation": {
       "active": true,
       "options": {
-        "bottom_bar_color": "#EDE8FA",
-        "selected_item_color": "#000000",
-        "unselected_item_color": "#64748B",
+        "bottom_bar_color": "#232F3E",
+        "selected_item_color": "#FF9900",
+        "unselected_item_color": "#FFFFFF",
         "menu_options_count": 3,
         "menu_options": [
           {
@@ -220,14 +210,14 @@
             "icon": "home_fill.svg"
           },
           {
-            "name": "Settings",
-            "url": "https://wemofy.in/",
-            "icon": "settings_fill.svg"
+            "name": "You",
+            "url": "https://www.amazon.in/gp/css/homepage.html?ref_=nav_youraccount_btn",
+            "icon": "profile_fill.svg"
           },
           {
-            "name": "Profile",
-            "url": "https://wemofy.in/",
-            "icon": "messages_fill.svg"
+            "name": "Cart",
+            "url": "https://www.amazon.in/gp/cart/view.html?ref_=nav_cart",
+            "icon": "cart_line.svg"
           }
         ]
       }
@@ -235,35 +225,35 @@
     "sidebar": {
       "active": true,
       "app_icon": "assets/icon.svg",
-      "app_name": "Wemofy",
-      "app_name_color": "#FFFFFF",
+      "app_name": "Amazon",
+      "app_name_color": "#000000",
       "app_id": 1,
-      "app_id_color": "#DADADA",
+      "app_id_color": "#000000",
       "options": {
-        "side_bar_color": "#8D4BFA",
-        "side_bar_item_color": "#9C77F4",
-        "menubutton_text_color": "#FFFFFF",
-        "selected_menubutton_text_color": "#FFFFFF",
+        "side_bar_color": "#FFFFFF",
+        "side_bar_item_color": "#FFFFFF",
+        "menubutton_text_color": "#000000",
+        "selected_menubutton_text_color": "#000000",
         "side_options_count": 4,
         "side_options": [
           {
-            "name": "Wemofy",
-            "url": "https://wemofy.in/",
+            "name": "Mobiles & Computers",
+            "url": "https://www.amazon.in/gp/browse.html?node=1389401031&ref_=nav_em_sbc_mobcomp_all_mobiles_0_2_8_2",
             "icon": "assets/person.svg"
           },
           {
-            "name": "youtube",
-            "url": "https://www.youtube.com/",
+            "name": "TV , Appliences",
+            "url": "https://www.amazon.in/s?k=tv+and+appliences&rh=n%3A1389401031&ref=nb_sb_noss",
             "icon": "assets/person.svg"
           },
           {
-            "name": "codeforces",
-            "url": "https://codeforces.com/",
+            "name": "Mens Fasion",
+            "url": "https://www.amazon.in/s?k=mens+fashion",
             "icon": "assets/person.svg"
           },
           {
-            "name": "Help",
-            "url": "https://codeforces.com/",
+            "name": "Womes fasion",
+            "url": "https://www.amazon.in/s?k=womens+fashion&crid=3QE2XV73YEF3V&sprefix=womens+fashion%2Caps%2C226&ref=nb_sb_noss_1",
             "icon": "assets/person.svg"
           }
         ]
