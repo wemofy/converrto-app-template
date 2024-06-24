@@ -1,11 +1,13 @@
 import 'dart:math';
-
+import 'dart:io'show Platform;
 import 'package:converrto/globalfunctions.dart';
 import 'package:converrto/homepage.dart';
 import 'package:converrto/icon.dart';
 import 'package:converrto/nav1.dart';
 import 'package:converrto/hamburger1.dart';
+import 'package:converrto/notification_services.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -26,8 +28,36 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  String? initialMessage;
+  bool _resolved = false;
 
   PageController _pageController = PageController();
+  @override
+  void initState() {
+    getDevicetoken();
+    requestNotificationpermission();
+    FirebaseMessaging.instance.getInitialMessage().then(
+          (value) => setState(
+            () {
+          _resolved = true;
+          initialMessage = value?.data.toString();
+        },
+      ),
+    );
+
+    FirebaseMessaging.onMessage.listen(showFlutterNotification);
+
+    // FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    //   print('A new onMessageOpenedApp event was published!');
+    //   Navigator.pushNamed(
+    //     context,
+    //     '/message',
+    //     arguments: MessageArguments(message, true),
+    //   );
+    // });
+
+    super.initState();
+  }
 
   void _onItemTapped(int index) {
     setState(() {

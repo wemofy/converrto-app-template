@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "242495227079",
+    "project_id": "converrto-6c416",
+    "storage_bucket": "converrto-6c416.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242495227079:android:9ba6561a2db7689f002ae2",
+        "android_client_info": {
+          "package_name": "com.wemofy.appname"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrB7pZEHvnYiOAZBsBcP06TdubGhIeFBM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

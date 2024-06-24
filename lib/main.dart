@@ -2,13 +2,25 @@ import 'dart:convert';
 import 'package:converrto/globalfunctions.dart';
 import 'package:converrto/homescreen.dart';
 import 'package:converrto/onboardingscreens/splashscreen.dart';
+import 'package:converrto/setup_firebase.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'notification_services.dart';
 import 'onboardingscreens/onboardingscreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  FirebaseOptions x= await setupFirebase();
+  await Firebase.initializeApp(
+    options: x,
+  );
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  if (!kIsWeb) {
+    await setupFlutterNotifications();
+  }
   String jsonData = await loadJsonData();
   runApp(MyApp(jsonData: jsonDecode(jsonData)));
 }
@@ -16,6 +28,16 @@ Future<void> main() async {
 Future<String> loadJsonData() async {
   return await rootBundle.loadString('assets/config.json');
 }
+
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await Firebase.initializeApp();
+  await setupFlutterNotifications();
+  showFlutterNotification(message);
+  print('Handling a background message ${message.messageId}');
+}
+
+
 
 class MyApp extends StatefulWidget {
   final Map<String, dynamic> jsonData;
