@@ -37,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: hexToColor(widget.onboardingoptions['screen_options']['bgcolor']),
+      backgroundColor: hexToColor(widget.onboardingoptions['options']['screen_options']['bgcolor']),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 80),
@@ -45,23 +45,23 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             children: [
               Expanded(
                 child: PageView.builder(
-                  itemCount: widget.onboardingoptions['screen_options']['screen_count'],
+                  itemCount: widget.onboardingoptions['options']['screen_options']['screen_count'],
                   controller: _pageController,
                   itemBuilder: (context, index) => OnboardContent(
-                    title: widget.onboardingoptions['options'][index]['title'],
-                    description: widget.onboardingoptions['options'][index]
+                    title: widget.onboardingoptions['options']['screens_config'][index]['title'],
+                    description: widget.onboardingoptions['options']['screens_config'][index]
                         ['description'],
-                    imagepath: widget.onboardingoptions['options'][index]
+                    imagepath: widget.onboardingoptions['options']['screens_config'][index]
                         ['bgimage'],
-                    scaleh: widget.onboardingoptions['options'][index]
+                    scaleh: widget.onboardingoptions['options']['screens_config'][index]
                         ['height_scale_ofimage'],
-                    scalew: widget.onboardingoptions['options'][index]
+                    scalew: widget.onboardingoptions['options']['screens_config'][index]
                         ['width_scale_ofimage'],
-                    bradius: widget.onboardingoptions['options'][index]
+                    bradius: widget.onboardingoptions['options']['screens_config'][index]
                         ['border_radius_ofimage'],
-                    titlecolor: widget.onboardingoptions['options'][index]
+                    titlecolor: widget.onboardingoptions['options']['screens_config'][index]
                         ['titlecolor'],
-                    desciptioncolor: widget.onboardingoptions['options'][index]
+                    desciptioncolor: widget.onboardingoptions['options']['screens_config'][index]
                     ['descriptioncolor'],
                   ),
                 ),
@@ -83,25 +83,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       );
                     },
                     buttonname: "Skip",
-                    color: widget.onboardingoptions['screen_options']['button_color'],
+                    color: widget.onboardingoptions['options']['screen_options']['button_color'],
                   ),
                   const Spacer(),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 4),
                     child: SmoothPageIndicator(
                       controller: _pageController, // PageController
-                      count: widget.onboardingoptions['screen_options']['screen_count'],
+                      count: widget.onboardingoptions['options']['screen_options']['screen_count'],
                       effect: ScaleEffect(
                         spacing: 9.0,
                         scale: 1.5,
-                        radius: widget.onboardingoptions['screen_options']['squaredot']?2.0:5.0,
+                        radius: widget.onboardingoptions['options']['screen_options']['squaredot']?2.0:5.0,
                         dotWidth: 10.0,
                         dotHeight: 10.0,
                         strokeWidth: 10,
                         dotColor:
-                            hexToColor(widget.onboardingoptions['screen_options']['dot_color']),
+                            hexToColor(widget.onboardingoptions['options']['screen_options']['dot_color']),
                         activeDotColor: hexToColor(
-                            widget.onboardingoptions['screen_options']['active_dot_color']),
+                            widget.onboardingoptions['options']['screen_options']['active_dot_color']),
                       ),
                     ),
                   ),
@@ -109,7 +109,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   CustomButton(
                     press: () {
                       _pageController.page !=
-                              widget.onboardingoptions['screen_options']['screen_count'] - 1
+                              widget.onboardingoptions['options']['screen_options']['screen_count'] - 1
                           ? _pageController.nextPage(
                               duration: const Duration(milliseconds: 500),
                               curve: Curves.ease,
@@ -126,7 +126,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             );
                     },
                     buttonname: "Next",
-                    color: widget.onboardingoptions['screen_options']['button_color'],
+                    color: widget.onboardingoptions['options']['screen_options']['button_color'],
                   ),
                 ],
               ),

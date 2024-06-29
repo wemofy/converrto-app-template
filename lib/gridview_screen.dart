@@ -17,8 +17,8 @@ class GridViewScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (type == "tab") {
-      return homedata['tab']['active']
+    if (type == "cards") {
+      return homedata['cards']['active']
           ? GridView.builder(
               physics: NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -31,7 +31,7 @@ class GridViewScreen extends StatelessWidget {
                   mainAxisExtent: 130),
               padding: EdgeInsets.fromLTRB(30, 15, 30, 15),
               shrinkWrap: true,
-              itemCount: homedata['tab']['tab_count'],
+              itemCount: homedata['cards']['cards_count'],
               itemBuilder: (context, index) {
                 return GestureDetector(
                   onTap: () {
@@ -40,20 +40,20 @@ class GridViewScreen extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => WebPage(
                                 jsonData: jsonData,
-                                url: homedata['tab']['tab_array'][index]['url'],
-                                title: homedata['tab']['tab_array'][index]
+                                url: homedata['cards']['cards_array'][index]['url'],
+                                title: homedata['cards']['cards_array'][index]
                                     ['title'],
                               )),
                     );
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: hexToColor(homedata['tab']['tab_color']),
+                        color: hexToColor(homedata['cards']['cards_color']),
                         borderRadius: BorderRadius.circular(7),
                         border: Border.all(
                             width: 1,
                             color: hexToColor(
-                                homedata['tab']['tab_border_color']))),
+                                homedata['cards']['cards_border_color']))),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Column(
@@ -63,7 +63,7 @@ class GridViewScreen extends StatelessWidget {
                             child: Container(
                                 height: 70,
                                 child: ImageLoader(
-                                  url: homedata['tab']['tab_array'][index]
+                                  url: homedata['cards']['cards_array'][index]
                                       ['bgimage'],
                                 )),
                           ),
@@ -71,7 +71,7 @@ class GridViewScreen extends StatelessWidget {
                             height: 10,
                           ),
                           Text(
-                            homedata['tab']['tab_array'][index]['title'],
+                            homedata['cards']['cards_array'][index]['title'],
                             softWrap: true,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
@@ -79,7 +79,7 @@ class GridViewScreen extends StatelessWidget {
                                 .labelSmall
                                 ?.copyWith(
                                   color: hexToColor(
-                                      homedata['tab']['title_color']),
+                                      homedata['cards']['title_color']),
                                   fontSize: 14,
                                 ),
                           ),
@@ -92,13 +92,13 @@ class GridViewScreen extends StatelessWidget {
             )
           : Container();
     }
-    if (type == "options") {
-      return homedata['options']['active']
+    if (type == "minicards") {
+      return homedata['minicards']['active']
           ? Padding(
               padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
               child: Container(
                 height: 92.0 *
-                        ((homedata['options']['options_count'] /
+                        ((homedata['minicards']['minicards_count'] /
                                 (MediaQuery.of(context).orientation ==
                                         Orientation.portrait
                                     ? 4
@@ -106,12 +106,12 @@ class GridViewScreen extends StatelessWidget {
                             .ceil()) +
                     20,
                 decoration: BoxDecoration(
-                    color: hexToColor(homedata['options']['bgcolor']),
+                    color: hexToColor(homedata['minicards']['bgcolor']),
                     borderRadius: BorderRadius.circular(0),
                     border: Border.all(
                         width: 1,
                         color:
-                            hexToColor(homedata['options']['border_color']))),
+                            hexToColor(homedata['minicards']['border_color']))),
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -124,7 +124,7 @@ class GridViewScreen extends StatelessWidget {
                       mainAxisExtent: 90),
                   padding: const EdgeInsets.all(10),
                   shrinkWrap: true,
-                  itemCount: homedata['options']['options_count'],
+                  itemCount: homedata['minicards']['minicards_count'],
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
@@ -133,9 +133,9 @@ class GridViewScreen extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => WebPage(
                                     jsonData: jsonData,
-                                    url: homedata['options']['options_array']
+                                    url: homedata['minicards']['minicards_array']
                                         [index]['url'],
-                                    title: homedata['options']['options_array']
+                                    title: homedata['minicards']['minicards_array']
                                         [index]['title'],
                                   )),
                         );
@@ -148,7 +148,7 @@ class GridViewScreen extends StatelessWidget {
                                 height: 60,
                                 width: 60,
                                 child: ImageLoader(
-                                  url: homedata['options']['options_array']
+                                  url: homedata['minicards']['minicards_array']
                                       [index]['bgimage'],
                                 ),
                               )),
@@ -156,7 +156,7 @@ class GridViewScreen extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            homedata['options']['options_array'][index]
+                            homedata['minicards']['minicards_array'][index]
                                 ['title'],
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
@@ -164,7 +164,7 @@ class GridViewScreen extends StatelessWidget {
                                 .labelSmall
                                 ?.copyWith(
                                   color: hexToColor(
-                                      homedata['options']['title_color']),
+                                      homedata['minicards']['title_color']),
                                   fontSize: 13,
                                 ),
                           ),
