@@ -1,9 +1,9 @@
-import 'package:converrto/homescreen.dart';
+import 'package:converrto/home/homescreen.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-import 'globalfunctions.dart';
-import 'icon.dart';
+import '../utils/globalfunctions.dart';
+import '../utils/icon.dart';
 
 class Hamburger1 extends StatefulWidget {
   Hamburger1(

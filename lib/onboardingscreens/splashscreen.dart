@@ -1,6 +1,6 @@
-import 'package:converrto/icon.dart';
-import 'package:converrto/globalfunctions.dart';
-import 'package:converrto/homescreen.dart';
+import 'package:converrto/utils/icon.dart';
+import 'package:converrto/utils/globalfunctions.dart';
+import 'package:converrto/home/homescreen.dart';
 import 'package:converrto/onboardingscreens/onboardingscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

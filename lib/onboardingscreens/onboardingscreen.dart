@@ -1,5 +1,5 @@
-import 'package:converrto/globalfunctions.dart';
-import 'package:converrto/homescreen.dart';
+import 'package:converrto/utils/globalfunctions.dart';
+import 'package:converrto/home/homescreen.dart';
 import 'package:converrto/onboardingscreens/button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

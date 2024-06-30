@@ -76,17 +76,52 @@
     "homescreen_options": {
       "options": {
         "view_order": [
+          "carousel_custom",
+          "minicards_horizental",
+          "carousel",
           "minicards",
           "divider",
           "cards",
-          "buttons"
+          "buttons",
+          "offercards"
         ],
         "carousel": {
           "active": true,
           "border_color": "#ADADAD",
           "dot_color": "#D4C4F2",
           "active_dot_color": "#146EB4",
-          "squaredot": false,
+          "squaredot": true,
+          "carousel_count": 3,
+          "carousel_array": [
+            {
+              "title": "Mobiles",
+              "bgimage": "assets/amazon/mobilephones.png",
+              "url": "https://www.amazon.in/b/?_encoding=UTF8&node=1389401031&ref_=hero1_WLDUber&pd_rd_w=IbSLb&content-id=amzn1.sym.5880db43-8f62-49ae-9f3d-7b5f2605dec3&pf_rd_p=5880db43-8f62-49ae-9f3d-7b5f2605dec3&pf_rd_r=JVR35EA4G1RTFM9GX6VK&pd_rd_wg=KExZv&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce"
+            },
+            {
+              "title": "Buckets",
+              "bgimage": "assets/amazon/buckets_mugs.png",
+              "url": "https://www.amazon.in/s?k=buckets&i=kitchen&rh=p_72%3A1318476031%2Cp_36%3A-42000&s=home&dc&_encoding=UTF8&content-id=amzn1.sym.bc7b0e44-feb7-439d-93e9-b51679de2751&crid=TIAC6HR8OAGP&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce&pd_rd_w=Aei8k&pd_rd_wg=KExZv&pf_rd_p=bc7b0e44-feb7-439d-93e9-b51679de2751&pf_rd_r=JVR35EA4G1RTFM9GX6VK&qid=1718114231&rnid=3444809031&sprefix=buckets%2Ckitchen%2C251&ref=pd_hp_d_hero_unk"
+            },
+            {
+              "title": "Under 499",
+              "bgimage": "assets/amazon/under499.png",
+              "url": "https://www.amazon.in/s?i=toys&bbn=1350380031&rh=n%3A1350380031%2Cp_85%3A10440599031%2Cp_72%3A1318476031%2Cp_28%3A-SPONS%2Cp_n_age_range%3A1480705031%7C1480706031%7C1480707031%7C1480708031%7C1480709031%7C1665125031%2Cp_36%3A-48000&dc&_encoding=UTF8&_encoding=UTF8&content-id=amzn1.sym.e1f4e1a6-d346-4773-8270-ec7a5d81880d&pd_rd_r=7a36be65-7d75-499a-bec7-ed7519ff40ce&pd_rd_w=g2x77&pd_rd_wg=KExZv&pf_rd_p=e1f4e1a6-d346-4773-8270-ec7a5d81880d&pf_rd_r=JVR35EA4G1RTFM9GX6VK&qid=1718019024&rnid=2485523031&ref=pd_hp_d_hero_unk"
+            }
+          ]
+        },
+        "carousel_custom": {
+          "active": true,
+          "custum_options": {
+            "autoplay": true,
+            "ratio": 4.0,
+            "dot_indicator": false,
+            "infinite_scroll": true
+          },
+          "border_color": "#ADADAD",
+          "dot_color": "#D4C4F2",
+          "active_dot_color": "#146EB4",
+          "squaredot": true,
           "carousel_count": 3,
           "carousel_array": [
             {
@@ -108,13 +143,14 @@
         },
         "cards": {
           "active": true,
+          "title" : "Cards",
           "cards_color": "#D3E9FF",
           "cards_border_color": "#8EC5FD",
           "title_color": "#000000",
           "cards_count": 5,
           "cards_array": [
             {
-              "title": "Prime",
+              "title": "Prime dhdh dhdthdt hdtht",
               "bgimage": "assets/amazon/tab1.png",
               "url": "https://www.amazon.in/amazonprime?pd_rd_w=3EBdw&content-id=amzn1.sym.e283dc19-a806-41c7-a8be-0cee0d758b19:amzn1.sym.e283dc19-a806-41c7-a8be-0cee0d758b19&pf_rd_p=e283dc19-a806-41c7-a8be-0cee0d758b19&pf_rd_r=5RJ46CEATXCVSC6H2052&pd_rd_wg=MV15o&pd_rd_r=1759766f-c8a8-4d79-ba6d-7173eacdc001&qid=1718647838&ref=sxts_aspa_qna&c_c=-1399515592"
             },
@@ -140,14 +176,34 @@
             }
           ]
         },
-        "minicards": {
+        "minicards_horizental": {
           "active": true,
+          "title" : "minicards_horizental",
           "bgcolor": "#FFEED4",
           "border_color": "#ADADAD",
           "title_color": "#000000",
-          "minicards_count": 4,
+          "minicards_count": 8,
           "minicards_array": [
             {
+              "title": "Amazon \npay",
+              "bgimage": "assets/amazon/op1.svg",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay"
+            },
+            {
+              "title": "Transactions",
+              "bgimage": "assets/amazon/op2.svg",
+              "url": "https://www.amazon.in/pay/history?ref_=apay_deskhome_ViewStatement"
+            },
+            {
+              "title": "Scan & Pay",
+              "bgimage": "assets/amazon/op3.svg",
+              "url": "https://www.amazon.in/b?ie=UTF8&node=16300323031&pd_rd_w=iORCl&content-id=amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c:amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_p=4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_r=XJN7DMXTDRP7ZV9GZF7Z&pd_rd_wg=bJydF&pd_rd_r=cda1e67f-deab-4da0-bbb3-928a93b70c80&qid=1718647290&ref_=sxts_snpl_1_0_4f91868f-fe8e-421b-85a1-79b3ce31889c"
+            },
+            {
+              "title": "Pay Bills",
+              "bgimage": "assets/amazon/op4.svg",
+              "url": "https://www.amazon.in/apay/bills-and-offers"
+            },{
               "title": "Amazon pay",
               "bgimage": "assets/amazon/op1.svg",
               "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay"
@@ -169,8 +225,151 @@
             }
           ]
         },
+        "minicards": {
+          "active": true,
+          "title" : "minicards",
+          "bgcolor": "#FFEED4",
+          "border_color": "#ADADAD",
+          "title_color": "#000000",
+          "minicards_count": 8,
+          "minicards_array": [
+            {
+              "title": "Amazon pay",
+              "bgimage": "assets/amazon/op1.svg",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay"
+            },
+            {
+              "title": "Transactions",
+              "bgimage": "assets/amazon/op2.svg",
+              "url": "https://www.amazon.in/pay/history?ref_=apay_deskhome_ViewStatement"
+            },
+            {
+              "title": "Scan & Pay",
+              "bgimage": "assets/amazon/op3.svg",
+              "url": "https://www.amazon.in/b?ie=UTF8&node=16300323031&pd_rd_w=iORCl&content-id=amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c:amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_p=4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_r=XJN7DMXTDRP7ZV9GZF7Z&pd_rd_wg=bJydF&pd_rd_r=cda1e67f-deab-4da0-bbb3-928a93b70c80&qid=1718647290&ref_=sxts_snpl_1_0_4f91868f-fe8e-421b-85a1-79b3ce31889c"
+            },
+            {
+              "title": "Pay Bills",
+              "bgimage": "assets/amazon/op4.svg",
+              "url": "https://www.amazon.in/apay/bills-and-offers"
+            },{
+              "title": "Amazon pay",
+              "bgimage": "assets/amazon/op1.svg",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay"
+            },
+            {
+              "title": "Transactions",
+              "bgimage": "assets/amazon/op2.svg",
+              "url": "https://www.amazon.in/pay/history?ref_=apay_deskhome_ViewStatement"
+            },
+            {
+              "title": "Scan & Pay",
+              "bgimage": "assets/amazon/op3.svg",
+              "url": "https://www.amazon.in/b?ie=UTF8&node=16300323031&pd_rd_w=iORCl&content-id=amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c:amzn1.sym.4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_p=4f91868f-fe8e-421b-85a1-79b3ce31889c&pf_rd_r=XJN7DMXTDRP7ZV9GZF7Z&pd_rd_wg=bJydF&pd_rd_r=cda1e67f-deab-4da0-bbb3-928a93b70c80&qid=1718647290&ref_=sxts_snpl_1_0_4f91868f-fe8e-421b-85a1-79b3ce31889c"
+            },
+            {
+              "title": "Pay Bills",
+              "bgimage": "assets/amazon/op4.svg",
+              "url": "https://www.amazon.in/apay/bills-and-offers"
+            }
+          ]
+        },
+        "offercards": {
+          "active": true,
+          "title" : "offercards",
+          "bgcolor": "#FFEED4",
+          "image_border_color": "#ADADAD",
+          "title_color": "#000000",
+          "subtitle_color": "#ADADAD",
+          "offer_text_color": "#000000",
+          "offercards_count": 4,
+          "offercards_array": [
+            {
+              "title": "Amazon pay",
+              "subtitle": "Amazon pay",
+              "bgimage": "assets/img.png",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay",
+              "discount": {
+                "active": false,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "offer": {
+                "active": false,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "price": {
+                "active": false,
+                "options": {
+                  "old_price": "$55",
+                  "new_price": "$55"
+                }
+              }
+            },
+            {
+              "title": "Amazon pay",
+              "subtitle": "Amazon pay",
+              "bgimage": "assets/img.png",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay",
+              "discount": {
+                "active": false,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "offer": {
+                "active": false,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "price": {
+                "active": false,
+                "options": {
+                  "old_price": "$55",
+                  "new_price": "$55"
+                }
+              }
+            },
+            {
+              "title": "Amazon pay",
+              "subtitle": "Amazon pay",
+              "bgimage": "assets/img.png",
+              "url": "https://www.amazon.in/gp/sva/dashboard?ref_=nav_cs_apay",
+              "discount": {
+                "active": true,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "offer": {
+                "active": true,
+                "options": {
+                  "color": "#ADADAD",
+                  "text": "15% off"
+                }
+              },
+              "price": {
+                "active": true,
+                "options": {
+                  "old_price": "$55",
+                  "new_price": "$55"
+                }
+              }
+            }
+          ]
+        },
         "buttons": {
           "active": true,
+          "title" : "buttons",
           "partition_color": "#146eb4",
           "buttons_color": "#FFFFFF",
           "border_color": "#ADADAD",
