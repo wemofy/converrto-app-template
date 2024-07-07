@@ -1,14 +1,14 @@
 import 'dart:convert';
-import 'package:converrto/globalfunctions.dart';
-import 'package:converrto/homescreen.dart';
+import 'package:converrto/utils/globalfunctions.dart';
+import 'package:converrto/home/homescreen.dart';
 import 'package:converrto/onboardingscreens/splashscreen.dart';
-import 'package:converrto/setup_firebase.dart';
+import 'package:converrto/firebase/setup_firebase.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'notification_services.dart';
+import 'firebase/notification_services.dart';
 import 'onboardingscreens/onboardingscreen.dart';
 
 Future<void> main() async {

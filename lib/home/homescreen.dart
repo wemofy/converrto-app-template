@@ -1,11 +1,11 @@
 import 'dart:math';
 import 'dart:io'show Platform;
-import 'package:converrto/globalfunctions.dart';
-import 'package:converrto/homepage.dart';
-import 'package:converrto/icon.dart';
-import 'package:converrto/nav1.dart';
-import 'package:converrto/hamburger1.dart';
-import 'package:converrto/notification_services.dart';
+import 'package:converrto/utils/globalfunctions.dart';
+import 'package:converrto/home/homepage.dart';
+import 'package:converrto/utils/icon.dart';
+import 'package:converrto/webviews/nav1.dart';
+import 'package:converrto/webviews/hamburger1.dart';
+import 'package:converrto/firebase/notification_services.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
