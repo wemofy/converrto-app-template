@@ -423,39 +423,43 @@
     },
     "sidebar": {
       "active": true,
-      "app_icon": "assets/icon.svg",
-      "app_name": "Amazon",
-      "app_name_color": "#000000",
-      "app_id": 1,
-      "app_id_color": "#000000",
       "options": {
-        "side_bar_color": "#FFFFFF",
-        "side_bar_item_color": "#FFFFFF",
-        "menubutton_text_color": "#000000",
-        "selected_menubutton_text_color": "#000000",
-        "side_options_count": 4,
-        "side_options": [
-          {
-            "name": "Mobiles & Computers",
-            "url": "https://www.amazon.in/gp/browse.html?node=1389401031&ref_=nav_em_sbc_mobcomp_all_mobiles_0_2_8_2",
-            "icon": "assets/person.svg"
-          },
-          {
-            "name": "TV , Appliences",
-            "url": "https://www.amazon.in/s?k=tv+and+appliences&rh=n%3A1389401031&ref=nb_sb_noss",
-            "icon": "assets/person.svg"
-          },
-          {
-            "name": "Mens Fasion",
-            "url": "https://www.amazon.in/s?k=mens+fashion",
-            "icon": "assets/person.svg"
-          },
-          {
-            "name": "Womes fasion",
-            "url": "https://www.amazon.in/s?k=womens+fashion&crid=3QE2XV73YEF3V&sprefix=womens+fashion%2Caps%2C226&ref=nb_sb_noss_1",
-            "icon": "assets/person.svg"
-          }
-        ]
+        "side_app_configs": {
+          "app_icon": "assets/icon.svg",
+          "app_name": "Amazon",
+          "app_name_color": "#000000",
+          "app_id": 1,
+          "app_id_color": "#000000"
+        },
+        "side_config": {
+          "side_bar_color": "#FFFFFF",
+          "side_bar_item_color": "#FFFFFF",
+          "menubutton_text_color": "#000000",
+          "selected_menubutton_text_color": "#000000",
+          "side_options_count": 4,
+          "side_options": [
+            {
+              "name": "Mobiles & Computers",
+              "url": "https://www.amazon.in/gp/browse.html?node=1389401031&ref_=nav_em_sbc_mobcomp_all_mobiles_0_2_8_2",
+              "icon": "assets/person.svg"
+            },
+            {
+              "name": "TV , Appliences",
+              "url": "https://www.amazon.in/s?k=tv+and+appliences&rh=n%3A1389401031&ref=nb_sb_noss",
+              "icon": "assets/person.svg"
+            },
+            {
+              "name": "Mens Fasion",
+              "url": "https://www.amazon.in/s?k=mens+fashion",
+              "icon": "assets/person.svg"
+            },
+            {
+              "name": "Womes fasion",
+              "url": "https://www.amazon.in/s?k=womens+fashion&crid=3QE2XV73YEF3V&sprefix=womens+fashion%2Caps%2C226&ref=nb_sb_noss_1",
+              "icon": "assets/person.svg"
+            }
+          ]
+        }
       }
     },
     "extra_options": {

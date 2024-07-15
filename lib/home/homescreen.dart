@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'dart:io'show Platform;
+import 'dart:io' show Platform;
 import 'package:converrto/utils/globalfunctions.dart';
 import 'package:converrto/home/homepage.dart';
 import 'package:converrto/utils/icon.dart';
@@ -9,6 +9,7 @@ import 'package:converrto/firebase/notification_services.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
@@ -32,18 +33,20 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _resolved = false;
 
   PageController _pageController = PageController();
+
   @override
   void initState() {
     getDevicetoken();
     requestNotificationpermission();
-    FirebaseMessaging.instance.getInitialMessage().then(
+    fun();
+    messaging.getInitialMessage().then(
           (value) => setState(
             () {
-          _resolved = true;
-          initialMessage = value?.data.toString();
-        },
-      ),
-    );
+              _resolved = true;
+              initialMessage = value?.data.toString();
+            },
+          ),
+        );
 
     FirebaseMessaging.onMessage.listen(showFlutterNotification);
 
@@ -268,8 +271,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: hexToColor(
-          widget.jsonData['config']['sidebar']['options']['side_bar_color']),
+      backgroundColor: hexToColor(widget.jsonData['config']['sidebar']['options']
+          ['side_config']['side_bar_color']),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -278,18 +281,18 @@ class _MenuDrawerState extends State<MenuDrawer> {
               padding: const EdgeInsets.fromLTRB(0, 60, 0, 0),
               child: AppIcon(
                 radius: 60,
-                url: widget.jsonData['config']['sidebar']['app_icon'],
+                url: widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_icon'],
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Text(
-                widget.jsonData['config']['sidebar']['app_name'],
+                widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_name'],
                 style: GoogleFonts.inter(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
                   color: hexToColor(
-                      widget.jsonData['config']['sidebar']['app_name_color']),
+                      widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_name_color']),
                 ),
               ),
             ),
@@ -299,12 +302,12 @@ class _MenuDrawerState extends State<MenuDrawer> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: Text(
-                "User id : ${widget.jsonData['config']['sidebar']['app_id']}",
+                "User id : ${widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id']}",
                 style: GoogleFonts.inter(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: hexToColor(
-                      widget.jsonData['config']['sidebar']['app_id_color']),
+                      widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id_color']),
                 ),
               ),
             ),
@@ -324,18 +327,18 @@ class _MenuDrawerState extends State<MenuDrawer> {
                   ),
                 );
               },
-              icon: widget.jsonData['config']['sidebar']['options']
+              icon: widget.jsonData['config']['sidebar']['options']['side_config']
                   ['side_options'][0]['icon'],
               title: 'Home',
               is_selected: _selectedIndex == 0,
-              selectedcolor: hexToColor(widget.jsonData['config']['sidebar']
-                  ['options']['side_bar_item_color']),
-              selected_text_color: widget.jsonData['config']['sidebar']
-                  ['options']['selected_menubutton_text_color'],
-              text_color: widget.jsonData['config']['sidebar']['options']
+              selectedcolor: hexToColor(widget.jsonData['config']['sidebar']['options']
+                  ['side_config']['side_bar_item_color']),
+              selected_text_color: widget.jsonData['config']['sidebar']['options']
+                  ['side_config']['selected_menubutton_text_color'],
+              text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                   ['menubutton_text_color'],
             ),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     0
                 ? MenuButton(
@@ -347,27 +350,27 @@ class _MenuDrawerState extends State<MenuDrawer> {
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
                             url: widget.jsonData['config']['sidebar']['options']
-                                ['side_options'][0]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][0]['name'],
+                                ['side_config']['side_options'][0]['url'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][0]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][0]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][0]['name'],
                     is_selected: _selectedIndex == 1,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     1
                 ? MenuButton(
@@ -378,28 +381,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][1]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][1]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][1]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][1]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][1]['name'],
                     is_selected: _selectedIndex == 2,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     2
                 ? MenuButton(
@@ -410,28 +413,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][2]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][2]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][2]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][2]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][2]['name'],
                     is_selected: _selectedIndex == 3,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     3
                 ? MenuButton(
@@ -442,28 +445,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][3]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][3]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][3]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][3]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][3]['name'],
                     is_selected: _selectedIndex == 4,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     4
                 ? MenuButton(
@@ -474,28 +477,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][4]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][4]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][4]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][4]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][4]['name'],
                     is_selected: _selectedIndex == 5,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     5
                 ? MenuButton(
@@ -506,28 +509,28 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][5]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][5]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][5]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][5]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][5]['name'],
                     is_selected: _selectedIndex == 6,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
-            widget.jsonData['config']['sidebar']['options']
+            widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options_count'] >
                     6
                 ? MenuButton(
@@ -538,24 +541,24 @@ class _MenuDrawerState extends State<MenuDrawer> {
                         MaterialPageRoute(
                           builder: (context) => Hamburger1(
                             jsonData: widget.jsonData,
-                            url: widget.jsonData['config']['sidebar']['options']
+                            url: widget.jsonData['config']['sidebar']['options']['side_config']
                                 ['side_options'][6]['url'],
-                            title: widget.jsonData['config']['sidebar']
-                                ['options']['side_options'][6]['name'],
+                            title: widget.jsonData['config']['sidebar']['options']
+                                ['side_config']['side_options'][6]['name'],
                           ),
                         ),
                       );
                     },
-                    icon: widget.jsonData['config']['sidebar']['options']
+                    icon: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][6]['icon'],
-                    title: widget.jsonData['config']['sidebar']['options']
+                    title: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['side_options'][6]['name'],
                     is_selected: _selectedIndex == 7,
                     selectedcolor: hexToColor(widget.jsonData['config']
-                        ['sidebar']['options']['side_bar_item_color']),
-                    selected_text_color: widget.jsonData['config']['sidebar']
-                        ['options']['selected_menubutton_text_color'],
-                    text_color: widget.jsonData['config']['sidebar']['options']
+                        ['sidebar']['options']['side_config']['side_bar_item_color']),
+                    selected_text_color: widget.jsonData['config']['sidebar']['options']
+                        ['side_config']['selected_menubutton_text_color'],
+                    text_color: widget.jsonData['config']['sidebar']['options']['side_config']
                         ['menubutton_text_color'],
                   )
                 : Container(),
