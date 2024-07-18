@@ -19,6 +19,10 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 FirebaseMessaging messaging = FirebaseMessaging.instance;
 
+void fun(){
+  messaging.subscribeToTopic('all');
+}
+
 void requestNotificationpermission() async {
   NotificationSettings settings = await messaging.requestPermission(
     alert: true,
