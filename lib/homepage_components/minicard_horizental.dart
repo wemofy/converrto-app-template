@@ -31,6 +31,7 @@ class MiniCardHorizental extends StatelessWidget {
             height: 5,
           ),
           Container(
+            width: MediaQuery.sizeOf(context).width-40,
             decoration: BoxDecoration(
                 color: hexToColor(homedata['minicards_horizental']['bgcolor']),
                 borderRadius: BorderRadius.circular(7),

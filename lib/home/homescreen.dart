@@ -296,21 +296,21 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-              child: Text(
-                "User id : ${widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id']}",
-                style: GoogleFonts.inter(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: hexToColor(
-                      widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id_color']),
-                ),
-              ),
-            ),
+            // const SizedBox(
+            //   height: 5,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+            //   child: Text(
+            //     "User id : ${widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id']}",
+            //     style: GoogleFonts.inter(
+            //       fontSize: 14,
+            //       fontWeight: FontWeight.w600,
+            //       color: hexToColor(
+            //           widget.jsonData['config']['sidebar']['options']['side_app_configs']['app_id_color']),
+            //     ),
+            //   ),
+            // ),
             const SizedBox(
               height: 30,
             ),
