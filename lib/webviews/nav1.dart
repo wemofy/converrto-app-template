@@ -1,4 +1,5 @@
 import 'package:converrto/utils/globalfunctions.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -23,6 +24,7 @@ class _Nav1State extends State<Nav1> {
   @override
   void initState() {
     super.initState();
+
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))
@@ -45,20 +47,31 @@ class _Nav1State extends State<Nav1> {
             });
           },
           onWebResourceError: (WebResourceError error) {
-            setState(() {
-              _isLoading = false;
-              widget.jsonData['config']['extra_options']['active']?
-              _errorMessage = widget.jsonData['config']['extra_options']
-                      ['options']['default_error_message'] +
-                  "\n" +
-                  widget.jsonData['config']['extra_options']['options']
-                      ['try_again_text']:_errorMessage='';
-            });
+            if (kDebugMode) {
+              const String redText = '\x1B[31m';
+              const String resetText = '\x1B[0m';
+              print('${redText}got itsfosfbgdfbgsjnsfngvsfgsfgsfgfgfs'
+                  'bdfgdfgdfgfdgdfghdfgghfdghdhtdhdhdthdthdthdth'
+                  'dthdthdththdthdhthdthdthdthfthdthdthdthdthtfh'
+                  'thtfhfthtdhtfhtfhtfhtdht${resetText}');
+              print(error.errorType);
+            }
+            if(error.errorType==WebResourceErrorType.connect
+            || error.errorType==WebResourceErrorType.timeout
+            ){
+              setState(() {
+                _isLoading = false;
+                widget.jsonData['config']['extra_options']['active']?
+                _errorMessage = widget.jsonData['config']['extra_options']
+                ['options']['default_error_message'] +
+                    "\n" +
+                    widget.jsonData['config']['extra_options']['options']
+                    ['try_again_text']:_errorMessage='';
+              });
+            }
+
           },
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.youtube.com/')) {
-              return NavigationDecision.prevent;
-            }
             return NavigationDecision.navigate;
           },
         ),
